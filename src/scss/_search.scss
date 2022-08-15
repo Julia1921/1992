@@ -1,0 +1,27 @@
+.search{
+	padding: 24px 0;
+	&__inner{
+		&_form{
+			align-items: center;
+		}
+		&_field{
+			width: 100%;
+			height: 56px;
+			border: 1px solid $borderColor;
+			background: $whiteColor;
+			padding: 16px;
+			margin-right: 8px;
+		}
+		&_btn{
+			@include no-btn;
+			background: $blueColor;
+			padding: 16px;
+			border-radius: 4px;
+			&-img{
+				width: 24px;
+				height: 24px;
+				color: $whiteColor;
+			}
+		}
+	}
+}

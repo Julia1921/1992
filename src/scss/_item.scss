@@ -1,0 +1,116 @@
+.item{
+	flex-direction: column;
+	gap: 16px;
+	padding: 16px;
+	background: $whiteColor;
+	line-height: 1.4;
+	font-size: 14px;
+	font-weight: 400;
+	margin-bottom: 16px;
+	
+	&__top,
+	&__middle,
+	&__bottom{
+		align-items: stretch;
+	}
+	&__top{
+		&_info{
+			gap: 37px;
+            @include adaptiv-value("gap", 37, 4, 1);
+		}
+		&_price{
+			display: inline-block;
+			line-height: 24px;
+			font-weight: 500;
+            min-width: 152px;
+		}
+	}
+	&__middle{
+		&_description{
+			p{
+				&:first-of-type{
+					margin-bottom: 16px;
+				}
+				&:last-of-type{
+					text-transform: uppercase;
+				}
+			}
+		}
+		&_documents{
+			flex-direction: column;
+			align-items: flex-end;
+            @media (max-width: $md2) {
+                align-items: flex-start;
+            }
+			h6{
+                &:first-of-type{
+                    @media (max-width: $md2) {
+                        margin-top: 10px;
+                    }    
+                }
+                &:last-of-type{
+                    @include adaptiv-value("margin-bottom", 32, 16, 1)
+                }
+			}
+		}
+	}
+	&__documents_list-item{
+		margin-bottom: 10px;
+		a{
+            color: $blueColor;
+			position: relative;
+			padding-left: 26px;
+			&::before{
+				content: "";
+				position: absolute;
+				width: 17px;
+				height: 17px;
+				left: 0;
+				top: 0;
+				bottom: 0;
+				background: url(../../img/watch.svg);	
+			}
+			&#documents{
+				&::before{
+					background: url(../../img/doc.svg);
+				}
+			}
+			&#print{
+				&::before{
+					background: url(../../img/print.svg);
+				}
+			}
+		}
+	}	
+
+	&__bottom{
+		&_date-placement{
+			margin-right: 27px;
+		}
+		&_date-completion{
+			font-size: 16px;
+            &.--text-align__right{
+                @media (max-width: $md2) {
+                    text-align: left;
+                    flex: 0 0 100%;
+                    margin-top: 10px;
+                }
+           }
+		}
+        &_placement,
+        &_update{
+            @media (max-width: $md2) {
+                width: 100%;
+            }
+        }
+	}
+    &__top,
+    &__middle,
+    &__bottom{
+        @media (max-width: $md2) {
+            flex-wrap: wrap;
+        }
+    
+    }
+
+}

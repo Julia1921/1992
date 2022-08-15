@@ -1,0 +1,92 @@
+.header{
+    background: $whiteColor;
+    padding: 24px 0 26px;
+    &__inner{
+        align-items: center;
+    }
+    &__logo{
+        width: 97px;
+        height: 100px;
+        padding-right: 32px;
+    }
+    &__text{
+        max-width: 700px;
+        font-weight: 500;
+        padding-top: 42px;
+        position: relative;
+        &::before{
+            content: "Портал технической поддержки";
+            color: $headerTextColor;
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 8px;
+            font-size: 12px;
+            line-height: 1.5;
+            height: 30px;
+            border-bottom: 1px solid $borderColor;
+            max-width: 431px;
+        }
+        @media (max-width: $md1) {
+            display: none;
+        }
+
+    }
+    &__contacts{
+        align-items: center;
+        gap: 12px;
+        @media (max-width: $md2) {
+            flex-wrap: nowrap;
+        }
+
+        a{
+            color: $blueColor;
+            font-weight: 500;
+            position: relative;
+            line-height: 28px;
+            padding: 22px 0 19px;
+            @include adaptiv-font(22, 18, 1);
+            &::before{
+                content: "Техническая поддержка";
+                text-align: right;
+                color: #76767A;
+                position: absolute;
+                top: 0;
+                left: auto;
+                right: 0;
+                bottom: 8px;
+                font-size: 12px;
+                line-height: 1.5;
+                width: 100%;
+                height: 16px;
+                @media (max-width: $md4) {
+                    width: 110%;
+                }
+            }
+            &::after{
+                content: "График работы тех. поддержки";
+                text-align: left;
+                color: #76767A;
+                position: absolute;
+                bottom: 0px;
+                left: -36px;
+                font-size: 12px;
+                line-height: 1.5;
+                width: 110%;
+                height: 16px;
+                @media (max-width: $md4) {
+                    text-align: right;
+                    width: 100%;
+                    left: 0;
+                    right: 0;
+                }
+
+            }
+        }
+        &_phone{
+            width: 24px;
+            height: 24px;
+        }
+    }    
+}

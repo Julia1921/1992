@@ -1,0 +1,83 @@
+@import "../base/mixins";
+*,
+*::before,
+*::after {
+	box-sizing: border-box;
+}
+//</ПЕРЕМЕННЫЕ>===========================================================================================================
+
+$minWidth: 375px;
+$maxWidth: 1920px;
+$maxWidthContainer: 1428px;
+$md1: $maxWidthContainer + 12px;
+$md2: 991.98px;
+$md3: 767.98px;
+$md4: 479.98px;
+
+$headerTextColor: #76767A;
+$mainTextColor: #000;
+$blueColor: #0061D9;
+$whiteColor: #fff;
+$borderColor: #D9D9DE;
+
+//</ПЕРЕМЕННЫЕ>===========================================================================================================
+
+
+*,
+*::before,
+*::after {
+	box-sizing: border-box;
+}
+
+body {
+	font-family: 'Montserrat', sans-serif;
+	font-size: 14px;
+	line-height: 21.94 / 18;
+	color: $mainTextColor;
+	overflow-x: hidden;
+	background: #F5F5F5;
+	font-family: "Golos-Text";
+	font-weight: 400;
+}
+
+._container{
+	max-width: $maxWidthContainer;
+	@include adaptiv-value("padding-left", 20, 20,1);
+	@include adaptiv-value("padding-right", 20, 20,1);
+	margin: 0 auto;
+}
+.--flex{
+	display: flex;
+}
+.--jc-space-between{
+	justify-content: space-between;
+}
+.--left{
+	flex: 0 0 50%;
+}
+.--text-align__right{
+	text-align: right;
+}
+.--text-align__left{
+	text-align: left;
+}
+.--fz-18{
+	font-size: 18px;
+}
+.--lh-13{
+	line-height: 1.3;
+}
+h6{
+	font-size: 14px;
+	color: $headerTextColor;
+	line-height: 1.5;
+}
+@media (max-width: $md2) {
+	.--left{
+		flex: 0 0 100%;
+	}
+	
+}
+
+
+
